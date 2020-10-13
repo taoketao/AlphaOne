@@ -1,8 +1,7 @@
 '''
 Morgan, 12.9.17 
 
-an implementation of the standard tensorflow neural network 
-reinforcement learning system. CustomGoEnv is the callable
+OpenAI interfacer. CustomGoEnv is the callable
 class that initializes the game-playing paradigm in which
 an agent can step through the enviroment.
 

@@ -1,4 +1,14 @@
-# public abstract
+# about
+Public version of an old DeepRL project.
+
+constants.py        constants and settings of all sorts
+custom_go.py        OpenAI Gym-compatible game environment
+go_harness.py       small testing harness script
+huber_loss.py       huber loss function
+rv2_go.py           custom implementation Go
+search_net.py       the core training framework, tensorflow-style
+state_saver.py      Gym's state saving system cannibalized for Pachi
+
 Deepmind's deep neural system, AlphaGo, successfully learned to play Go at a
 high skill level. The system used a number of methods, including a CNN to
 examine the game state, a reinforcement learning paradigm, and an MCMC tree
@@ -19,29 +29,33 @@ so conceptual explanations are in the process of being written. However, the
 model itself is straightforward to implement, so I went ahead with that in the
 meantime.
 
-<<<<<<< HEAD
-( edit: when I say "heroku" i meant "pachi". my brain was weird. )
+Alpha Go, Alpha Go Zero, and Alpha Zero:   
+    https://deepmind.com/research/case-studies/alphago-the-story-so-far
+    https://arxiv.org/abs/1712.01815
+OpenAI Gym: https://arxiv.org/abs/1606.01540
+Deepmind's pivotal DeepRL Atari gameplayer: https://arxiv.org/abs/1312.5602
+A resource on Experience Replay:
+    https://ieeexplore.ieee.org/abstract/document/5719642
 
 =======
->>>>>>> 82f3eadf2300257fe749468955036156fa6f5857
 # Result
 As I've begun to learn, implementing machine learning models is sometimes 
 impeded by bugs in source code or in design choices not intended to facilitate
 specific iterations. In this project, I implemented the full network based
 on Deepmind's source code until I ran into an issue with their Go playing
-software, Heroku. Heroku does not innately support the maintenance of multiple
+software, Pachi. Pachi does not innately support the maintenance of multiple
 Go game instances at once. That worked fine for Deepmind's objectives. However,
 AlphaOne requires maintaining many Go game states at once. This is not a 
 demanding task (amounting to merely saving a state such as an epoch's gradient
 to backpropagate or an experience to save in an experience replay buffer) in
-theory, but due to Heroku's functionality, implementing AlphaOne using Heroku
+theory, but due to Pachi's functionality, implementing AlphaOne using Pachi
 would require re-running entire sequences of games in order to arrive at a
 desired state. That is, the runtime complexity of running any forward
 propagations is impaired by a factor linear to the number of steps needed to
 reach that game state - meaning, it becomes increasingly difficult to explore
 advanced game states, which functionally impairs the ultimate goal of the
 network. (Also, there are issues with parallelism and more implementation
-overhead due to this limitation of Heroku.) I searched for more Go programs
+overhead due to this limitation of Pachi.) I searched for more Go programs
 to integrate into the Deepmind-sourced pipeline, but ultimately, I had
 become discouraged at the fact that this project would require substantially
 more resources to complete than I had anticipated. So, I set down this 
