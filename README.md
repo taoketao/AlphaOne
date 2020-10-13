@@ -80,3 +80,4 @@ note 02 0924: Because of piece-taking, a direct algorithm would be a bit
 aggravating to implement, ...., but maybe not as aggravating than interfacing
 both pachi and gym. hmm investigating pre-made minimal GO players...
 Actually it looks pretty straightforward to implement
+

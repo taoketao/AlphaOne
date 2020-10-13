@@ -73,3 +73,4 @@ class WithSnapshots(Wrapper):
         new_snapshot = self.get_snapshot()
         
         return ActionResult(new_snapshot,obs,r,done,info)
+

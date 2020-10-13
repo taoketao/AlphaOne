@@ -38,3 +38,4 @@ elif C.harness_mode=='random':
             time.sleep(C.viz_delay)
         elif C.harness_mode=='random':
             if (input('enter to continue...') in ['Q','q']): break
+

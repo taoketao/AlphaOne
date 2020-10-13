@@ -332,3 +332,4 @@ class CustomGoEnv(gym.Env):
             self.opponent_policy = make_pachi_policy(board=board, engine_type=six.b('uct'), pachi_timestr=six.b('_2400')) # TODO: strength as argument
         else:
             raise error.Error('Unrecognized opponent policy {}'.format(self.opponent))
+
